@@ -1,13 +1,14 @@
 /**
  * implementation file for class BlockBark.
  */
-package sinhika.bark.blocks;
+package com.sinhika.bark.blocks;
 
 import java.util.List;
 
+import com.sinhika.bark.Bark;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import sinhika.bark.Bark;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;

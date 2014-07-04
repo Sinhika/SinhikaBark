@@ -1,14 +1,15 @@
-package sinhika.bark.items;
+package com.sinhika.bark.items;
 
 import java.util.List;
+
+import com.sinhika.bark.Bark;
+import com.sinhika.bark.blocks.BlockBark;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMultiTexture;
 import net.minecraft.item.ItemStack;
-import sinhika.bark.Bark;
-import sinhika.bark.blocks.BlockBark;
 
 public class BarkItemBlock extends ItemMultiTexture
 {

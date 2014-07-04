@@ -1,13 +1,14 @@
-package sinhika.bark;
+package com.sinhika.bark;
+
+import com.sinhika.bark.blocks.BlockBark;
+import com.sinhika.bark.items.BarkItemBlock;
+import com.sinhika.bark.items.ItemBark;
+import com.sinhika.bark.proxy.CommonProxy;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.creativetab.CreativeTabs;
-import sinhika.bark.blocks.BlockBark;
-import sinhika.bark.items.BarkItemBlock;
-import sinhika.bark.items.ItemBark;
-import sinhika.bark.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -33,7 +34,7 @@ public class Bark
 
 	/** The instance of your mod that Forge uses. */
     @Instance(Bark.MODID)
-    public static Bark instance;
+    public static Bark instance = new Bark();
 	
 	/** declare blocks */
 	public static Block barkBlock;
@@ -45,19 +46,19 @@ public class Bark
     public static CreativeTabs customTabSpices;
     
     /** Says where the client and server 'proxy' code is loaded. */
-    @SidedProxy(clientSide = "sinhika.bark.proxy.ClientProxy", serverSide = "sinhika.bark.proxy.CommonProxy")
+    @SidedProxy(clientSide = "com.sinhika.bark.proxy.ClientProxy", serverSide = "com.sinhika.bark.proxy.CommonProxy")
     public static CommonProxy proxy;
 
     /**
-     * preInit phase actions go here, such as reading config files and setting
-     * up logger.
+     * Run before anything else. Read your config, create blocks, items, etc, and 
+     * register them with the GameRegistry.
      */
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        // initialize configurables
-
-    	customTabSpices = new SpiceTab();
+    	Bark.proxy.preInit(event);
+    	
+      	customTabSpices = new SpiceTab();
     	
     	// init blocks
     	barkBlock = new BlockBark();
@@ -66,29 +67,29 @@ public class Bark
         // init items
     	barkItem = new ItemBark();
     	GameRegistry.registerItem(barkItem, barkItem.getUnlocalizedName().substring(5));
-    	// init recipes
-
-
-        // register entities
-
+  
     } // end preInit()
 
     /**
-     * Load phase actions go here, such as creating items & blocks, adding
-     * recipes, etc.
+     * Do your mod setup. Build whatever data structures you care about. Register recipes.
      */
     @EventHandler
-    public void load(FMLInitializationEvent event)
+    public void init(FMLInitializationEvent event)
     {
+    	Bark.proxy.init(event);
     	SpiceTab.init(new ItemStack(barkItem, 1, 3).getItem());
     	
-        // register handlers
     } // end load()
 
+   
+    /**
+     * Handle interaction with other mods, complete your setup based on this.
+     */
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
+    	Bark.proxy.postInit(event);
     }
     
     
-} // end class
+} // end class Bark

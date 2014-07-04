@@ -1,8 +1,9 @@
-package sinhika.bark.items;
+package com.sinhika.bark.items;
 
 import java.util.List;
 
-import sinhika.bark.Bark;
+import com.sinhika.bark.Bark;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
