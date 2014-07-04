@@ -1,10 +1,9 @@
 package com.sinhika.bark;
 
-import com.sinhika.bark.blocks.BlockBark;
-import com.sinhika.bark.items.BarkItemBlock;
+import com.sinhika.bark.items.FuelHandler;
 import com.sinhika.bark.items.ItemHandler;
 import com.sinhika.bark.proxy.CommonProxy;
-import net.minecraft.block.Block;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.Mod;
@@ -37,6 +36,8 @@ public class Bark
     /** custom creative-mode tab object */
     public static CreativeTabs customTabSpices;
     
+    protected static FuelHandler spiceFuelHandler;
+    
     /** Says where the client and server 'proxy' code is loaded. */
     @SidedProxy(clientSide = "com.sinhika.bark.proxy.ClientProxy", serverSide = "com.sinhika.bark.proxy.CommonProxy")
     public static CommonProxy proxy;
@@ -49,6 +50,8 @@ public class Bark
     public void preInit(FMLPreInitializationEvent event)
     {   	
       	customTabSpices = new SpiceTab();
+      	spiceFuelHandler = new FuelHandler();
+      	
     	Bark.proxy.preInit(event);
     	    	  
     } // end preInit()
@@ -60,6 +63,7 @@ public class Bark
     public void init(FMLInitializationEvent event)
     {
     	Bark.proxy.init(event);
+        GameRegistry.registerFuelHandler(spiceFuelHandler);
     	SpiceTab.init(new ItemStack(ItemHandler.barkItem, 1, 3).getItem());
     	
     } // end load()
