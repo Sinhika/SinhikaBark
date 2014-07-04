@@ -2,11 +2,9 @@ package com.sinhika.bark;
 
 import com.sinhika.bark.blocks.BlockBark;
 import com.sinhika.bark.items.BarkItemBlock;
-import com.sinhika.bark.items.ItemBark;
+import com.sinhika.bark.items.ItemHandler;
 import com.sinhika.bark.proxy.CommonProxy;
-
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.Mod;
@@ -36,12 +34,6 @@ public class Bark
     @Instance(Bark.MODID)
     public static Bark instance = new Bark();
 	
-	/** declare blocks */
-	public static Block barkBlock;
-	
-	/** declare items */
-	public static Item barkItem;
-	
     /** custom creative-mode tab object */
     public static CreativeTabs customTabSpices;
     
@@ -55,19 +47,10 @@ public class Bark
      */
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
-    {
-    	Bark.proxy.preInit(event);
-    	
+    {   	
       	customTabSpices = new SpiceTab();
-    	
-    	// init blocks
-    	barkBlock = new BlockBark();
-    	GameRegistry.registerBlock(barkBlock, BarkItemBlock.class, Bark.MODID + "_barkblock");
-    	
-        // init items
-    	barkItem = new ItemBark();
-    	GameRegistry.registerItem(barkItem, barkItem.getUnlocalizedName().substring(5));
-  
+    	Bark.proxy.preInit(event);
+    	    	  
     } // end preInit()
 
     /**
@@ -77,7 +60,7 @@ public class Bark
     public void init(FMLInitializationEvent event)
     {
     	Bark.proxy.init(event);
-    	SpiceTab.init(new ItemStack(barkItem, 1, 3).getItem());
+    	SpiceTab.init(new ItemStack(ItemHandler.barkItem, 1, 3).getItem());
     	
     } // end load()
 
