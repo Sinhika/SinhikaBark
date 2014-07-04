@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.creativetab.CreativeTabs;
 import sinhika.bark.blocks.BlockBark;
+import sinhika.bark.items.BarkItemBlock;
 import sinhika.bark.items.ItemBark;
 import sinhika.bark.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
@@ -60,7 +61,7 @@ public class Bark
     	
     	// init blocks
     	barkBlock = new BlockBark();
-    	GameRegistry.registerBlock(barkBlock, barkBlock.getUnlocalizedName().substring(5));
+    	GameRegistry.registerBlock(barkBlock, BarkItemBlock.class, Bark.MODID + "_barkblock");
     	
         // init items
     	barkItem = new ItemBark();

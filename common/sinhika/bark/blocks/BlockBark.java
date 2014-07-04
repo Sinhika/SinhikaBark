@@ -33,6 +33,7 @@ public class BlockBark extends Block {
 	public BlockBark() {
 		super(Material.wood);
 		this.setBlockName(Bark.MODID + "_barkblock");
+		this.setBlockTextureName("log");
 	    this.setCreativeTab(Bark.customTabSpices);
         this.setHardness(1.5F);
 	    this.setStepSound(soundTypeWood);
@@ -55,11 +56,11 @@ public class BlockBark extends Block {
      */
     public IIcon getIcon(int par1, int par2)
     {
-        if (par2 < 0 || par2 >= icons.length)
+        if (par2 < 0 || par2 >= this.icons.length)
         {
             par2 = 0;
         }
-        return icons[par2];
+        return this.icons[par2];
     }
     
     @Override
@@ -74,14 +75,14 @@ public class BlockBark extends Block {
         				iconRegister.registerIcon(Bark.MODID + ":" + "bark_cinnamon");
         	}
         	else {
-        		this.icons[i] = iconRegister.registerIcon("log_" + bark_names[i]);
+        		this.icons[i] = iconRegister.registerIcon("minecraft:log_" + bark_names[i]);
         	}
         }
     } // end registerIcons()
     
     /**
      * returns a list of blocks with the same ID, but different meta (eg: bark
-     * returns 4 blocks)
+     * returns 6 blocks)
      */
     @SuppressWarnings("unchecked")
     @Override
