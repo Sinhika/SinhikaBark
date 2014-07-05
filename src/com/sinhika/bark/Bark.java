@@ -1,7 +1,7 @@
 package com.sinhika.bark;
 
-import com.sinhika.bark.items.FuelHandler;
-import com.sinhika.bark.items.ItemHandler;
+import com.sinhika.bark.crafting.FuelHandler;
+import com.sinhika.bark.items.ModItems;
 import com.sinhika.bark.proxy.CommonProxy;
 
 import net.minecraft.item.ItemStack;
@@ -39,12 +39,12 @@ public class Bark
     protected static FuelHandler spiceFuelHandler;
     
     /** Says where the client and server 'proxy' code is loaded. */
-    @SidedProxy(clientSide = "com.sinhika.bark.proxy.ClientProxy", serverSide = "com.sinhika.bark.proxy.CommonProxy")
+    @SidedProxy(clientSide = "com.sinhika.bark.proxy.ClientProxy", serverSide = "com.sinhika.bark.proxy.ServerProxy")
     public static CommonProxy proxy;
 
     /**
      * Run before anything else. Read your config, create blocks, items, etc, and 
-     * register them with the GameRegistry.
+     * register them with the GameRegistry. Register recipes.
      */
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -57,14 +57,14 @@ public class Bark
     } // end preInit()
 
     /**
-     * Do your mod setup. Build whatever data structures you care about. Register recipes.
+     * Do your mod setup. Build whatever data structures you care about. 
      */
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
     	Bark.proxy.init(event);
         GameRegistry.registerFuelHandler(spiceFuelHandler);
-    	SpiceTab.init(new ItemStack(ItemHandler.barkItem, 1, 3).getItem());
+    	SpiceTab.init(new ItemStack(ModItems.barkItem, 1, 3).getItem());
     	
     } // end load()
 

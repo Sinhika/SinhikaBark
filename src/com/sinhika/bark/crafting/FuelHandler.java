@@ -1,4 +1,6 @@
-package com.sinhika.bark.items;
+package com.sinhika.bark.crafting;
+
+import com.sinhika.bark.items.ItemBark;
 
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.IFuelHandler;

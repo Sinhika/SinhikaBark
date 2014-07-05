@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public final class ItemHandler {
+public final class ModItems {
 
 	public static Item barkItem;
 
@@ -22,4 +22,4 @@ public final class ItemHandler {
     		OreDictionary.registerOre(dictName.toString(), new ItemStack(barkItem, 1, i));
     	}
 	} // end init()
-} // end class ItemHandler
+} // end class ModItems

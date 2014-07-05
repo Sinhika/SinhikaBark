@@ -8,7 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public final class BlockHandler {
+public final class ModBlocks {
 	/** declare blocks */
 	public static Block barkBlock;
 	
@@ -26,4 +26,4 @@ public final class BlockHandler {
     		OreDictionary.registerOre(dictName.toString(), new ItemStack(barkBlock, 1, i));
     	}
 	} // end init()
-} // end class BlockHandler
+} // end class ModBlocks
