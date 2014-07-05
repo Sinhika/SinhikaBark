@@ -51,7 +51,7 @@ public class ItemBark extends Item
 	public String getUnlocalizedName(ItemStack par1ItemStack) {
 		int i = MathHelper.clamp_int(par1ItemStack.getItemDamage(), 0, names.length);
 		return super.getUnlocalizedName() + "." + names[i];
-	} // end registerIcons()
+	} // end getUnlocalizedName()
 
 	/* (non-Javadoc)
 	 * @see net.minecraft.item.Item#getIconFromDamage(int)

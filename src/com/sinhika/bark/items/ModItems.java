@@ -1,15 +1,20 @@
 package com.sinhika.bark.items;
 
+import java.util.ArrayList;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public final class ModItems {
-
+	private static final int DEFAULT_TYPE_SIZE = 5;
 	public static Item barkItem;
-
-	public static final void init() {
+	public static ArrayList<ItemSpud> spudItems;
+	
+	public static final void init() 
+	{
+		// create barks
     	barkItem = new ItemBark();
     	GameRegistry.registerItem(barkItem, barkItem.getUnlocalizedName().substring(5));
     	
@@ -20,6 +25,14 @@ public final class ModItems {
     		dictName.append(ItemBark.names[i].substring(0,1).toUpperCase());
     		dictName.append(ItemBark.names[i].substring(1));
     		OreDictionary.registerOre(dictName.toString(), new ItemStack(barkItem, 1, i));
+    	}
+    	
+    	// create spuds
+    	spudItems = new ArrayList<ItemSpud>(DEFAULT_TYPE_SIZE);
+    	for (Item.ToolMaterial tm: Item.ToolMaterial.values()) {
+    		ItemSpud spud = new ItemSpud(tm);
+    		spudItems.add(spud);
+    		GameRegistry.registerItem(spud, spud.getUnlocalizedName().substring(5));
     	}
 	} // end init()
 } // end class ModItems
