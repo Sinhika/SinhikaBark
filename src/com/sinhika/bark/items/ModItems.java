@@ -2,6 +2,8 @@ package com.sinhika.bark.items;
 
 import java.util.ArrayList;
 
+import com.sinhika.bark.Bark;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -31,6 +33,7 @@ public final class ModItems {
     	spudItems = new ArrayList<ItemSpud>(DEFAULT_TYPE_SIZE);
     	for (Item.ToolMaterial tm: Item.ToolMaterial.values()) {
     		ItemSpud spud = new ItemSpud(tm);
+    		spud.setTextureName(Bark.MODID + ":" + spud.myToolMaterialName + "_spud");
     		spudItems.add(spud);
     		GameRegistry.registerItem(spud, spud.getUnlocalizedName().substring(5));
     	}

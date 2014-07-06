@@ -14,7 +14,6 @@ import com.sinhika.bark.blocks.ModBlocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.item.EntityItem;
@@ -48,14 +47,6 @@ public class ItemSpud extends ItemTool {
 		}
 		this.setUnlocalizedName(Bark.MODID + "_" + myToolMaterialName + "_spud");
 	} // end ctor
-
-	/* (non-Javadoc)
-	 * @see net.minecraft.item.Item#registerIcons(net.minecraft.client.renderer.texture.IIconRegister)
-	 */
-	@Override
-	public void registerIcons(IIconRegister iconRegister) {
-		iconRegister.registerIcon(Bark.MODID + ":" + myToolMaterialName + "_spud"); 
-	}
 
 	/* (non-Javadoc)
 	 * @see net.minecraft.item.Item#getContainerItem(net.minecraft.item.ItemStack)
@@ -116,7 +107,7 @@ public class ItemSpud extends ItemTool {
         	Random rand = new Random();
         	
         	for (ItemStack stack : drops) {
-                float f = 0.7F;
+                float f = 0.2F;
                 double d = rand.nextFloat() * f + (1.0F - f) * 0.5D;
                 double d1 = rand.nextFloat() * f + (1.0F - f) * 0.5D;
                 double d2 = rand.nextFloat() * f + (1.0F - f) * 0.5D;
@@ -126,6 +117,7 @@ public class ItemSpud extends ItemTool {
         	}
         	itemstack.damageItem(1, player);
         	player.addStat(StatList.mineBlockStatArray[Block.getIdFromBlock(targetBlock)], 1);
+        	player.worldObj.setBlockToAir(X, Y, Z);
         	return true;
         }
 		return false;
