@@ -74,7 +74,10 @@ public final class ModCrafting {
 	                        new Object[]{ "xxx", 'x', new ItemStack(ModItems.barkItem, 1, 2) });
 		
 		// birchbark canoe
-		// TODO
+		GameRegistry.addShapedRecipe( new ItemStack(ModItems.canoeItem), 
+				new Object[] {"   ", "xsx", "xxx", 
+							  'x', new ItemStack(ModBlocks.barkBlock, 1, 2),
+							  's', Items.slime_ball});
 		
 		// ground cinnamon
 		// TODO

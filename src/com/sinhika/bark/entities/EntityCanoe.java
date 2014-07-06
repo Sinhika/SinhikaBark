@@ -2,6 +2,8 @@ package com.sinhika.bark.entities;
 
 import java.util.List;
 
+import com.sinhika.bark.items.ModItems;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -9,7 +11,10 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityBoat;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -376,5 +381,17 @@ public class EntityCanoe extends EntityBoat
     {
         this.isBoatEmpty = par1;
     }
+
+	/**
+	 * Override to get a real canoe, not a vanilla boat back. Yes, we just ignore
+	 * all the parameters and substitute our own.
+	 *  (non-Javadoc)
+	 * @see net.minecraft.entity.Entity#func_145778_a(net.minecraft.item.Item, int, float)
+	 */
+	@Override
+	public EntityItem func_145778_a(Item entityItem, int quantity, float p_145778_3_) 
+	{
+		return this.entityDropItem(new ItemStack(ModItems.canoeItem, 1, 0), 0.0F);
+	}
 
 } // end class EntityCanoe

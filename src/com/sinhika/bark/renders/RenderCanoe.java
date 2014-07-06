@@ -1,7 +1,6 @@
 package com.sinhika.bark.renders;
 
 import com.sinhika.bark.Bark;
-import net.minecraft.client.model.ModelBoat;
 import net.minecraft.client.renderer.entity.RenderBoat;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityBoat;
