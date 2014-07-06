@@ -1,6 +1,10 @@
 package com.sinhika.bark.proxy;
 
 // import cpw.mods.fml.client.registry.RenderingRegistry;
+import com.sinhika.bark.entities.EntityCanoe;
+import com.sinhika.bark.renders.RenderCanoe;
+
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -10,8 +14,8 @@ public class ClientProxy extends CommonProxy
  
     public void registerRenderers()
     {
-//        RenderingRegistry.registerEntityRenderingHandler(EntityCanoe.class, 
-//                                                         new RenderCanoe());
+        RenderingRegistry.registerEntityRenderingHandler(EntityCanoe.class, 
+                                                         new RenderCanoe());
     }
 
 	/* (non-Javadoc)

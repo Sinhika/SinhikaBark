@@ -2,6 +2,7 @@ package com.sinhika.bark.proxy;
 
 import com.sinhika.bark.blocks.ModBlocks;
 import com.sinhika.bark.crafting.ModCrafting;
+import com.sinhika.bark.entities.ModEntities;
 import com.sinhika.bark.items.ModItems;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -11,9 +12,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class CommonProxy
 {
 	public void preInit(FMLPreInitializationEvent e) {
-        // init items
+        
     	ModItems.init();
     	ModBlocks.init();
+    	ModEntities.init();
     	ModCrafting.init();
 	}
 
@@ -24,4 +26,10 @@ public class CommonProxy
 	public void postInit(FMLPostInitializationEvent e) {
 
 	}
+	
+    public void registerRenderers()
+    {
+    	// does nothing server-side!
+    }
+
 } // end class CommonProxy

@@ -27,7 +27,7 @@ public class Bark
 	/** mod constants */
 	public static final String MODID = "sinhikabark";
 	public static final String NAME = "Sinhika's Bark";
-	public static final String VERSION = "1.7.2-0.01 (build @BUILD_NUMBER@";
+	public static final String VERSION = "1.7.2-0.01";
 
 	/** The instance of your mod that Forge uses. */
     @Instance(Bark.MODID)
@@ -53,7 +53,7 @@ public class Bark
       	spiceFuelHandler = new FuelHandler();
       	
     	Bark.proxy.preInit(event);
-    	    	  
+    	Bark.proxy.registerRenderers();
     } // end preInit()
 
     /**

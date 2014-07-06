@@ -13,6 +13,7 @@ public final class ModItems {
 	private static final int DEFAULT_TYPE_SIZE = 5;
 	public static Item barkItem;
 	public static ArrayList<ItemSpud> spudItems;
+	public static Item canoeItem;
 	
 	public static final void init() 
 	{
@@ -37,5 +38,9 @@ public final class ModItems {
     		spudItems.add(spud);
     		GameRegistry.registerItem(spud, spud.getUnlocalizedName().substring(5));
     	}
+    	
+    	// create canoe
+    	canoeItem = new ItemCanoe();
+    	GameRegistry.registerItem(canoeItem, canoeItem.getUnlocalizedName().substring(5));
 	} // end init()
 } // end class ModItems
