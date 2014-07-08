@@ -4,3 +4,8 @@ eclipse/*
 .gradle/*
 gradlew*
 gradle/*
+.settings/*
+.project
+.classpath
+.classpath
+.project

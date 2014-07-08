@@ -16,11 +16,10 @@ public class CommonProxy
     	ModItems.init();
     	ModBlocks.init();
     	ModEntities.init();
-    	ModCrafting.init();
 	}
 
 	public void init(FMLInitializationEvent e) {
-
+    	ModCrafting.init();
 	}
 
 	public void postInit(FMLPostInitializationEvent e) {
