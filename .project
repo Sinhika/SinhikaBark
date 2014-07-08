@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+	<filteredResources>
+		<filter>
+			<id>1404332246041</id>
+			<name>resources/assets/sinhikabark/textures/items</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-*.png</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
 	<name>SinhikaBark</name>
-	<comment></comment>
+	<comment/>
 	<projects>
 		<project>ForgeMod</project>
 	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments/>
+		</buildCommand>
+	</buildSpec>
 	<linkedResources>
 		<link>
 			<name>buildfiles</name>
@@ -32,15 +42,4 @@
 			<location>C:/Projects/Minecraft/mc_mod_src/SinhikaSpices/resources/pack.mcmeta</location>
 		</link>
 	</linkedResources>
-	<filteredResources>
-		<filter>
-			<id>1404332246041</id>
-			<name>resources/assets/sinhikabark/textures/items</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-*.png</arguments>
-			</matcher>
-		</filter>
-	</filteredResources>
 </projectDescription>
