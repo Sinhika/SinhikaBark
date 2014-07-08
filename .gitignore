@@ -1,2 +1,11 @@
 *.jar
 bin/*
+eclipse/*
+.gradle/*
+.project
+.project/*
+.classpath
+.classpath/*
+.settings/*
+gradlew*
+gradle/*
