@@ -9,3 +9,9 @@ gradle/*
 .classpath
 .classpath
 .project
+*.log
+*.gz
+*.cfg
+.settings/org.eclipse.jdt.core.prefs
+.project
+.classpath

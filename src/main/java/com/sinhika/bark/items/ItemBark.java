@@ -17,6 +17,8 @@ public class ItemBark extends Item
 {
 	public static final String[] names = new String[]
 			{"oak", "spruce", "birch", "cinnamon", "acacia", "big_oak"};
+	public static String[] oredict_names = new String[names.length];
+			
 	@SideOnly(Side.CLIENT)
 	private IIcon[] icons;
 	 
@@ -75,5 +77,12 @@ public class ItemBark extends Item
 			
 	} // end getSubItems()
     	
-    
+    public static void setOredict_name(String bark_name, int i)
+    {
+		StringBuilder dictName = new StringBuilder();
+		dictName.append("bark");
+		dictName.append(bark_name.substring(0,1).toUpperCase());
+		dictName.append(bark_name.substring(1));
+		oredict_names[i] = dictName.toString();
+    }
 } // class ItemBark

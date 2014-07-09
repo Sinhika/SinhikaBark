@@ -24,6 +24,7 @@ import net.minecraft.util.IIcon;
 public class BlockBark extends Block {
 
     public static final String[] bark_names = new String[] {"oak", "spruce", "birch", "cinnamon", "acacia", "big_oak"};
+    protected static String[] oredict_names = new String[bark_names.length];
     
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
@@ -96,6 +97,19 @@ public class BlockBark extends Block {
             subItems.add(new ItemStack(par1, 1, i));
         }
     } // end getSubBlocks()
+
+	public static String getOredict_name(int i) {
+		return oredict_names[i];
+	}
+
+	public static void setOredict_name(String bark_name, int i) 
+	{
+		StringBuilder dictName = new StringBuilder();
+		dictName.append("woodBark");
+		dictName.append(bark_name.substring(0,1).toUpperCase());
+		dictName.append(bark_name.substring(1));
+		oredict_names[i] = dictName.toString();
+	}
 
 	
     

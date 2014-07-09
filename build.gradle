@@ -23,6 +23,7 @@ archivesBaseName="SinhikasBark"
 
 minecraft {
     version = "1.7.2-10.12.2.1121"
+    runDir = "eclipse"
     assetDir = "eclipse/assets"
 }
 

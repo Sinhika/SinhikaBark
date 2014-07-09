@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>SinhikaBark</name>
-	<comment></comment>
-	<projects>
-		<project>ForgeMod</project>
-	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
+	<comment/>
+	<projects/>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>buildfiles</name>
-			<type>2</type>
-			<location>C:/Projects/Minecraft_17/SinhikaBark/buildfiles</location>
-		</link>
-	</linkedResources>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments/>
+		</buildCommand>
+	</buildSpec>
+	<linkedResources/>
 </projectDescription>

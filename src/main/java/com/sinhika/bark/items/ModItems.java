@@ -23,11 +23,9 @@ public final class ModItems {
     	
     	// register in ore dictionary
     	for (int i= 0; i < ItemBark.names.length; i++) {
-    		StringBuilder dictName = new StringBuilder();
-    		dictName.append("bark");
-    		dictName.append(ItemBark.names[i].substring(0,1).toUpperCase());
-    		dictName.append(ItemBark.names[i].substring(1));
-    		OreDictionary.registerOre(dictName.toString(), new ItemStack(barkItem, 1, i));
+    		ItemBark.setOredict_name(ItemBark.names[i], i);
+    		OreDictionary.registerOre(ItemBark.oredict_names[i], 
+    								  new ItemStack(barkItem, 1, i));
     	}
     	
     	// create spuds
