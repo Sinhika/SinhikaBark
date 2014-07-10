@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version="1.72-0.01"
+version="1.72-0.02"
 group="com.sinhika.bark"
 archivesBaseName="SinhikasBark"
 

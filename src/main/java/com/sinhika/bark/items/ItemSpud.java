@@ -31,6 +31,16 @@ public class ItemSpud extends ItemTool {
    
     public String myToolMaterialName;
     
+    public static String createToolMaterialName(ToolMaterial tm) 
+    {
+		if (tm == ToolMaterial.EMERALD) {
+			return new String("diamond");
+		}
+		else {
+			return new String(tm.toString().toLowerCase());
+		}	
+    }
+    
 	/**
 	 * @param toolMaterial
 	 */ 
@@ -39,12 +49,7 @@ public class ItemSpud extends ItemTool {
 		super(2.0F, toolMaterial, blocksEffectiveAgainst);
 		setCreativeTab(Bark.customTabSpices);
 		this.setNoRepair();	// to avoid dupe when placed in crafting table.
-		if (toolMaterial == ToolMaterial.EMERALD) {
-			myToolMaterialName = new String("diamond");
-		}
-		else {
-			myToolMaterialName = new String(toolMaterial.toString().toLowerCase());
-		}
+		myToolMaterialName = createToolMaterialName(toolMaterial);
 		this.setUnlocalizedName(Bark.MODID + "_" + myToolMaterialName + "_spud");
 	} // end ctor
 
