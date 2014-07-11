@@ -2,8 +2,6 @@ package com.sinhika.bark.items;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
-
 import com.google.common.collect.Sets;
 import com.sinhika.bark.Bark;
 
@@ -13,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public final class ModItems {
-	private static final int DEFAULT_TYPE_SIZE = 5;
 	public static Item barkItem;
 	public static ArrayList<ItemSpud> spudItems;
 	public static Item canoeItem;
@@ -46,9 +43,9 @@ public final class ModItems {
     	for (Item.ToolMaterial tm: Item.ToolMaterial.values()) 
     	{
     		// only create tools if a texture exists--
-    		String textureName = ItemSpud.createToolMaterialName(tm) + "_spud";
-    		if (existingToolTextures.contains(textureName)) 
+    		if (existingToolTextures.contains(ItemSpud.createToolMaterialName(tm))) 
     		{
+        		String textureName = ItemSpud.createToolMaterialName(tm) + "_spud";
     			ItemSpud spud = new ItemSpud(tm);
     			spud.setTextureName(Bark.MODID + ":" + textureName);
     			spudItems.add(spud);

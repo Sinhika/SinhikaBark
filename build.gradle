@@ -1,43 +1,10 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
-        }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
-    }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-    }
-}
+version = "1.7.2-0.02"
+sourceSets.main {
+    java {
+	srcDirs project.projectDir.getPath() exclude ("bin/**", "build*",".gradle/**","eclipse/**")
+	}
+    resources {
+	srcDirs '/resources' exclude ("bin/**", "build*",".gradle/**","eclipse/**")
+	}
+} 
 
-apply plugin: 'forge'
-
-version="1.72-0.02"
-group="com.sinhika.bark"
-archivesBaseName="SinhikasBark"
-
-minecraft {
-    version = "1.7.2-10.12.2.1121"
-    runDir = "eclipse"
-}
-
-dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
-}

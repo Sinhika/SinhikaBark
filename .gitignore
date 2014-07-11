@@ -15,3 +15,7 @@ gradle/*
 .settings/org.eclipse.jdt.core.prefs
 .project
 .classpath
+*.project
+*.classpath
+*.classpath
+*.project
