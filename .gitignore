@@ -7,15 +7,10 @@ gradle/*
 .settings/*
 .project
 .classpath
-.classpath
-.project
 *.log
 *.gz
 *.cfg
 .settings/org.eclipse.jdt.core.prefs
-.project
-.classpath
 *.project
+*.jbf
 *.classpath
-*.classpath
-*.project

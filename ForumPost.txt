@@ -1,0 +1,40 @@
+<http://i.imgur.com/1CbFnnA.png>
+
+What is it for?
+
+Minecraft 1.7.2 with Forge 1.7.2-10.12.2.1147 or later. Probably works with build 1121.
+
+What does it do?
+
+Make a bark spud and use it to peel bark off of logs. Make bundles of bark and use it as fuel, or construction blocks, or cook it into charcoal. Make paper from birch bark; take bundles of birch bark and some pitch (slime) and make a birch bark canoe! Birch bark canoes are very resilient, and flex instead of breaking when they hit rocks, squids, floating chickens, lily pads, etc.  From the inner bark of jungle trees, get cinnamon sticks--and if you have Pam's HarvestCraft, they are ore-dictionary compatible with HarvestCraft's cinnamon. If not, bundle up the cinnamon sticks into cinnamon bark, a lovely reddish junglewood log block.
+
+Recipes
+
+Bark Spud
+
+<http://i.imgur.com/DvHYykz.png?1>
+
+A bark spud is a tool for peeling bark off logs. In Minecraft, it destroys the log and returns pieces of bark; the number of bark pieces depends on the harvest level of the spud and such enchantments as Fortune. it's made with sticks and any standard tool material, and a few of the common mod-added materials, such as tin, copper, and bronze.
+
+Use the bark spud like an axe on tree trunks or logs, orcombine it with a log in the crafting table to get pieces of bark. (Useful if you already have a bunch of logs on hand). Bark spuds wear out, of course, and are not repairable in crafting tables.
+
+Bark Bundles
+
+<http://i.imgur.com/tL9ckAL.png> <http://i.imgur.com/w2ifDTD.png?1><http://i.imgur.com/kfxekBP.png?1>
+
+Nine bark pieces (or cinnamon sticks) can be combined to form a bundle of bark, aka a bark block. This is a block that looks like a log with bark on all sides and can be used for building. It can also be cooked in a furnace into charcoal, just like logs. Bark pieces can be used as fuel, but burn up quickly, like saplings. Bark bundles are about equal to a wooden plank as fuel.
+
+Birch Bark
+
+Paper
+
+<http://i.imgur.com/haGJpgB.png>
+
+The thin, papery bark of the birch tree can be used as paper. Three pieces of birch bark yields 3 sheets of paper.
+
+Birchbark Canoes
+
+<http://i.imgur.com/QxTeB05.png><http://i.imgur.com/NeUOkcT.png?1>
+
+ Make 5 bundles of birch bark, then combine with a slime ball (representing pitch) to build a birchbark canoe. A birchbark canoe is a resilient, flexible boat that bounces instead of breaking when it hits things.
+
