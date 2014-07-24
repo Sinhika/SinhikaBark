@@ -20,3 +20,4 @@ gradle/*
 *.classpath
 *.project
 *.jbf
+*.classpath
