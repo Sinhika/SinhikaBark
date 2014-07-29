@@ -1,6 +1,5 @@
 package com.sinhika.bark.crafting;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -52,28 +51,7 @@ public final class ModCrafting {
 		} // endfor
 		
 		// peel bark from log using spud
-		for (int i=0; i < BlockBark.bark_names.length; i++) {
-			int meta;
-			ItemStack log;
-			if (i < 4) {	// oldLog
-				meta = i;
-				log = new ItemStack(Blocks.log, 1, meta);
-			}
-			else // if (i >= 4 && i < 6) 
-			{ // new log
-				meta = i - 4;
-				log  = new ItemStack(Blocks.log2, 1, meta);
-			}
-			
-			
-			for (int j=0; j < ModItems.spudItems.size(); j++) {
-				int yield = ModItems.spudItems.get(j).func_150913_i().getHarvestLevel() + 3;
-				ItemStack product = new ItemStack(ModItems.barkItem, yield, i);
-				GameRegistry.addRecipe(
-						new ShapelessOreRecipe(product, log, 
-						new ItemStack(ModItems.spudItems.get(j), 1, OreDictionary.WILDCARD_VALUE)));
-			} // end-for j
-		} // end-for i
+		// REMOVED DUE TO INFINITE FUEL BUG
 			
 		
 		// **** Specialities ****

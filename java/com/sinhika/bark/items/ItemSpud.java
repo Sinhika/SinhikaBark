@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Set;
 
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.stats.StatList;
 import net.minecraft.world.World;
 
@@ -48,52 +47,9 @@ public class ItemSpud extends ItemTool {
 	{
 		super(2.0F, toolMaterial, blocksEffectiveAgainst);
 		setCreativeTab(Bark.customTabSpices);
-		this.setNoRepair();	// to avoid dupe when placed in crafting table.
 		myToolMaterialName = createToolMaterialName(toolMaterial);
 		this.setUnlocalizedName(Bark.MODID + "_" + myToolMaterialName + "_spud");
 	} // end ctor
-
-	/* (non-Javadoc)
-	 * @see net.minecraft.item.Item#getContainerItem(net.minecraft.item.ItemStack)
-	 */
-	@Override
-	public ItemStack getContainerItem(ItemStack itemStack) {
-        // copy our item.
-		ItemStack returnItem = new ItemStack(itemStack.getItem(), 1, itemStack.getItemDamage() + 1);
-		
-        // is spud enchanted? If so, must copy enchantments to
-        // new spud(s)
-		if (itemStack.isItemEnchanted()) {
-			NBTTagCompound nbtcompound = itemStack.getTagCompound();
-			returnItem.setTagCompound(nbtcompound);
-		}
-		
-		return returnItem;
-	} // end getContainerItem()
-
-	/* (non-Javadoc)
-	 * @see net.minecraft.item.Item#hasContainerItem(net.minecraft.item.ItemStack)
-	 */
-	@Override
-	public boolean hasContainerItem(ItemStack stack) {
-		return true;
-	}
-	
-	/* (non-Javadoc)
-	 * @see net.minecraft.item.Item#hasContainerItem()
-	 */
-	@Override
-	public boolean hasContainerItem() {
-		return true;
-	}
-
-	/* (non-Javadoc)
-	 * @see net.minecraft.item.Item#doesContainerItemLeaveCraftingGrid(net.minecraft.item.ItemStack)
-	 */
-	@Override
-	public boolean doesContainerItemLeaveCraftingGrid(ItemStack par1ItemStack) {
-		return false;
-	}
 
 	/* (non-Javadoc)
 	 * @see net.minecraft.item.Item#onBlockStartBreak(net.minecraft.item.ItemStack, int, int, int, net.minecraft.entity.player.EntityPlayer)
@@ -107,6 +63,10 @@ public class ItemSpud extends ItemTool {
         if ((targetBlock instanceof BlockLog) || targetBlock == Blocks.log || targetBlock == Blocks.log2) 
         {
         	int metadata = targetBlock.getDamageValue(player.worldObj, X, Y, Z);
+        	// sanity check in case we have a mod log that isn't handled or something.
+        	if (metadata >= ItemBark.names.length) {
+        		metadata = 0;
+        	}
         	ArrayList<ItemStack> drops = getBarkPeeled(player.worldObj, targetBlock, metadata,
         					EnchantmentHelper.getEnchantmentLevel(Enchantment.fortune.effectId, itemstack));
         	Random rand = new Random();
